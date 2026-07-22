@@ -15,7 +15,7 @@ function Attractions() {
     return (
         shows.map((show, i) => {
             return (
-                <div className="w-150 h-50 relative
+                <div key={show.title + i} className="w-150 h-50 relative
                  flex flex-col justify-center overflow-hidden">
                     <Images show={show} />
                     <MetaData show={show} />

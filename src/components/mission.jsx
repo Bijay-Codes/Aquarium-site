@@ -1,19 +1,44 @@
+import { proofProgrames } from "../data/proof"
+
 export function Mission() {
     return (
-        <section className="p-6">
-            <h1 className="text-2xl">Our Mission</h1>
-            <h2 className="text-xl max-w-75">
-                We're working toward a facility where every animal is cared for and thriving,
-                while helping people understand the damage our oceans face every day.
-            </h2>
+        <section className="p-6 flex flex-col gap-12">
+            <div><h1 className="text-2xl">Our Mission</h1>
+                <h2 className="text-xl">
+                    We're working toward a facility where every animal is cared for and thriving,
+                    while helping people understand the damage our oceans face every day.
+                </h2>
+            </div>
+            <Proof />
         </section>
     )
 }
 
 function Proof() {
     return (
-        <div>
-
+        <div className="flex flex-wrap gap-6 items-stretch">
+            {proofProgrames.map(programme => {
+                return (
+                    <div
+                        className="w-120 flex flex-col overflow-hidden rounded-xl"
+                        key={programme.title + programme.img}
+                    >
+                        <img
+                            src={programme.img}
+                            alt={programme.title}
+                            loading="lazy"
+                            className="w-full h-80 object-cover"
+                        />
+                        <div className="bg-slate-700 px-4 py-2 flex flex-col flex-1 gap-2">
+                            <h2 className="text-xl">{programme.title}</h2>
+                            <p className="flex-1">{programme.description}</p>
+                            <button className="text-sm underline underline-offset-4 w-fit py-2">
+                                More Details &gt;&gt;
+                            </button>
+                        </div>
+                    </div>
+                )
+            })}
         </div>
     )
 }

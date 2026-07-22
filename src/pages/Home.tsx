@@ -6,7 +6,7 @@ export function Homepage() {
         <>
             <HeroSection />
             <KeyAttractions />
-            {/* <Mission /> */}
+            <Mission />
         </>
     )
 }
