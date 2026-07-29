@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3c9"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#eafffb"/>
+      <stop offset="100%" stop-color="#bff0ff"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="32" cy="32" r="32" fill="url(#bg)"/>
+
+  <!-- manta/fish silhouette -->
+  <path d="M32 20
+           C 24 20, 15 26, 10 34
+           C 16 32, 22 33, 26 37
+           C 22 38, 18 41, 15 46
+           C 21 44, 26 42, 30 44
+           L 32 40
+           L 34 44
+           C 38 42, 43 44, 49 46
+           C 46 41, 42 38, 38 37
+           C 42 33, 48 32, 54 34
+           C 49 26, 40 20, 32 20 Z"
+        fill="#0b1220" opacity="0.92"/>
+
+  <!-- horizon wave -->
+  <path d="M4 44 C 14 40, 22 48, 32 44 C 42 40, 50 48, 60 44 L60 60 L4 60 Z"
+        fill="url(#wave)" opacity="0.35"/>
+</svg>

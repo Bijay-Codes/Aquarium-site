@@ -1,5 +1,5 @@
 import { Navbar } from './components/navbar'
-import { Homepage } from './pages/Home'
+import { Homepage } from './pages/home'
 function App() {
   return (
     <>
