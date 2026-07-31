@@ -11,13 +11,24 @@ export function Mission() {
                 </h2>
             </div>
             <Proof />
+            <div className="bg-primary-bg/10 outline outline-primary-bg border-primary-bg mt-auto rounded 
+            max-w-200 border-l-6 p-6">
+                <p>
+                    1.2 million gallons run through our closed-loop filtration system — no ocean water is ever discharged untreated,
+                    and the facility runs on 40% recycled seawater.
+                </p>
+                <p>
+                    AZA-accredited since 2011 — one of only 4 aquariums in the region held to that standard.
+                </p>
+            </div>
+            <hr className="opacity-30 w-full" />
         </section>
     )
 }
 
 function Proof() {
     return (
-        <div className="grid grid-cols-2 max-w-330 gap-4 overflow-hidden">
+        <div className="flex flex-wrap sm:grid sm:grid-cols-2 max-w-330 gap-4 overflow-hidden">
             {proofProgrames.map(programme => {
                 return (
                     <div
@@ -34,7 +45,7 @@ function Proof() {
                             <h2 className="text-xl">{programme.title}</h2>
                             <p className="flex-1">{programme.description}</p>
                             <button className="text-sm underline underline-offset-4 w-fit py-2">
-                                More Details &gt;&gt;
+                                read more...
                             </button>
                         </div>
                     </div>

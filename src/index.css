@@ -24,15 +24,15 @@
 :root {
     --page-bg: oklch(0.9939 0.0029 264.5423);
     --page-fg: oklch(0.2101 0.0318 264.6645);
-    --surface-bg: oklch(0.9743 0.0068 247.8951);
+    --surface-bg: oklch(93.423% 0.01047 248.173);
     --surface-fg: oklch(0.2781 0.0296 256.848);
-    --surface-muted-bg: oklch(0.9424 0.0138 247.9737);
+    --surface-muted-bg: oklch(93.972% 0.02707 249.94);
     --surface-muted-fg: oklch(0.4461 0.0263 256.8018);
-    --primary-bg: oklch(0.5681 0.188 259.8145);
+    --primary-bg: oklch(57.775% 0.15391 259.573);
     --primary-fg: oklch(1 0 0);
     --secondary-bg: oklch(0.5544 0.0407 257.4166);
     --secondary-fg: oklch(1 0 0);
-    --accent-bg: oklch(0.9167 0.0772 205.0414);
+    --accent-bg: oklch(87.493% 0.11046 204.769);
     --accent-fg: oklch(0.3982 0.0664 227.3919);
     --success-color: oklch(0.5273 0.1371 150.0693);
     --success-fg: oklch(1 0 0);
@@ -64,6 +64,10 @@
 }
 
 body {
-    background: var(--page-bg);
+    background: var(--color-page-bg);
     color: var(--page-fg);
 }
+
+/* * {
+    outline: 1px solid var(--success-color);
+} */

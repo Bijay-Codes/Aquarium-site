@@ -1,26 +1,76 @@
-import { shows } from "../data/showDetails"
+import { shows } from '../data/showDetails';
+import { motion } from 'framer-motion';
+
+const parent = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.16, delayChildren: 0.3
+        }
+    }
+}
+
+const children = {
+    hidden: {
+        opacity: 0, x: 16
+    },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.3, ease: 'easeInOut'
+        }
+    }
+}
+
+
 export function KeyAttractions() {
     return (
-        <section className="p-6 flex flex-col gap-9 text-white">
-            <h1 className="text-4xl font-extrabold">Key Attractions</h1>
-            <div className="grid grid-cols-[repeat(auto-fill,minmax(500px,1fr))] gap-6">
+        <section className="sm:p-6 p-4 flex flex-col gap-10 text-white mt-6">
+            <Heading />
+            <motion.div
+                variants={parent}
+                initial='hidden'
+                whileInView='visible'
+                className="sm:grid sm:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] flex flex-wrap gap-6">
                 <Attractions />
-            </div>
+            </motion.div>
             <ShowMoreAnimals />
             <hr />
         </section >
     )
 }
 
+function Heading() {
+    return (
+        <h1 className="text-4xl font-extrabold text-primary-bg w-fit py-1">
+            Key{' '}
+            <span className="relative inline-block">
+                <motion.span
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, ease: 'easeInOut' }}
+                    style={{ originX: 0 }}
+                    className="absolute inset-0 bg-primary-bg -z-10"
+                />
+                <span className="relative text-white px-1">Attractions</span>
+            </span>
+        </h1>
+    );
+}
 function Attractions() {
     return (
         shows.map((show, i) => {
             return (
-                <div key={show.title + i} className="w-full max-w-160 h-50 relative
+                <motion.div
+                    variants={children}
+                    key={show.title + i}
+                    className="w-full max-w-160 h-50 relative
                  flex flex-col justify-center overflow-hidden">
                     <Images show={show} />
                     <MetaData show={show} />
-                </div>
+                </motion.div>
             )
         })
     )
@@ -42,23 +92,29 @@ function MetaData({ show }) {
     return (
         <div
             className='w-full h-full rounded-2xl p-4
-            flex flex-col gap-6
+            flex flex-col gap-2
             absolute bottom-0 bg-black/30 hover:bg-transparent'>
             <div>
-                <h1 className="text-xl font-extrabold">{show.title}</h1>
-                <h2 className="text-sm font-extrabold text-shadow-xs text-shadow-black">{show.time}</h2>
-                <p className="text-md font-bold max-w-1/2 text-shadow-xs text-shadow-black">
+                <span className="sm:text-xl text-xl font-extrabold">{show.title} | </span>
+                <span className="text-xl font-extrabold text-shadow-xs text-shadow-black">{show.time}</span>
+                <p className="text-sm font-bold max-w-[80%] sm:max-w-1/2 text-shadow-xs text-shadow-black opacity-80 hover:opacity-100 text-white mt-2">
                     {show.description}
                 </p>
             </div>
             <button className="text-sm underline underline-offset-4 text-shadow-sm text-shadow-black
-            self-start">More details &gt;&gt;</button>
+            mt-auto self-start">Show details &gt;&gt;</button>
         </div>
     )
 }
 function ShowMoreAnimals() {
     return (
-        <button className="bg-primary-bg
-        h-fit px-4 py-2 self-start rounded">View all &gt;&gt;</button>
+        <motion.button
+            initial={{ x: -10, opacity: 0.8 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
+            className="bg-primary-bg
+            h-fit px-3 py-0.5 md:px-4 md:py-2 self-start rounded">View all &gt;&gt;
+        </motion.button>
     )
 }

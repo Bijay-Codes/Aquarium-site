@@ -3,7 +3,7 @@ import { useCheckDesktop } from '../hooks/useCheckWidth'
 const images = [
     {
         title: 'Releasing Lunaris back to the ocean',
-        src: '/screenshots/rescue.jpg'
+        src: '/screenshots/rescue.webp'
     },
     {
         title: 'Watch otter feeding session live',
@@ -11,7 +11,7 @@ const images = [
     },
     {
         title: 'Watch the fishes swim by the coral reefs',
-        src: '/screenshots/aquarium.jpg'
+        src: '/screenshots/aquarium.webp'
     }
 ]
 
@@ -34,15 +34,6 @@ export function JoinMembership() {
                         <p className="text-sm">We keep you updated on whats happening at the aquarium - every hour</p>
                         <p className="text-sm">Join 200k+ members watching and taking part in live events.</p>
                         <SocialIcons />
-                        <div className="bg-primary-bg/10 outline outline-primary-bg border-l-6 border-accent-bg mt-auto rounded p-2">
-                            <p>
-                                1.2 million gallons run through our closed-loop filtration system — no ocean water is ever discharged untreated,
-                                and the facility runs on 40% recycled seawater.
-                            </p>
-                            <p>
-                                AZA-accredited since 2011 — one of only 4 aquariums in the region held to that standard.
-                            </p>
-                        </div>
                     </div>
                     {!showSlider &&
                         <Slider list={images} />
@@ -51,18 +42,18 @@ export function JoinMembership() {
                 <div
                     className='flex flex-col gap-4 text-surface-fg
                         bg-surface-bg w-full px-6 py-4 rounded-lg'>
-                    <h3 className='text-lg font-extrabold'>Stay connected</h3>
+                    <h3 className='text-2xl font-extrabold'>Stay connected</h3>
                     <h4 className='text-md'>Get notified every time we bring a change</h4>
                     <p>We email and post updates every time we rescue an animal, help the environment, or release an animal back into the wild.</p>
-                    <button className='text-left text-surface-muted-fg mt-auto'>details &gt;&gt;</button>
+                    <button className='text-left text-surface-muted-fg mt-auto underline underline-offset-4'>learn more &gt;&gt;</button>
                 </div>
                 <div
                     className='flex flex-col gap-4 text-surface-fg
                         bg-surface-bg w-full p-4 rounded-lg'>
-                    <h3 className='text-lg font-extrabold'>Name a rescued animal</h3>
+                    <h3 className='text-2xl font-extrabold'>Name a rescued animal</h3>
                     <h4 className='text-md'>Take part in our naming events</h4>
                     <p>Members get the chance to name the animals we bring in — join an event and cast your vote.</p>
-                    <button className='text-left text-surface-muted-fg'>details &gt;&gt;</button>
+                    <button className='text-left text-surface-muted-fg mt-auto underline underline-offset-4'>learn more &gt;&gt;</button>
                 </div>
                 <div
                     className='flex flex-col gap-4 text-surface-fg
@@ -72,7 +63,7 @@ export function JoinMembership() {
                     </div>
                     <h4 className='text-md'>A member's only discount on every ticket</h4>
                     <p>Enjoy 10% off tickets and store purchases at the aquarium.</p>
-                    <button className='text-left text-surface-muted-fg'>details &gt;&gt;</button>
+                    <button className='text-left text-surface-muted-fg underline mt-auto underline-offset-4'>learn more &gt;&gt;</button>
                 </div>
             </div>
         </section>
@@ -152,6 +143,7 @@ function Slider({ list }) {
                 <img
                     src={list[index].src}
                     alt={list[index].title}
+                    loading="lazy"
                     className="w-full h-full rounded-lg object-cover" />
                 <div className="flex flex-col gap-2 items-center justify-center
                 inset-x-0 left-0 rounded-b-lg border-t-0 absolute bottom-0 bg-page-bg p-2">
@@ -167,10 +159,10 @@ function SliderButtons({ list, index, setIndex }) {
     const change = (direction) => {
         setIndex((index + direction + list.length) % list.length);
     }
-    const buttonStyles = `px-2 py-1 rounded hover:text-accent-fg hover:bg-accent-bg hover:outline-primary-bg
-                    bg-accent-bg/20 outline outline-accent-bg/30 text-accent-bg`;
+    const buttonStyles = `px-2 py-1 rounded-xl hover:text-accent-fg hover:bg-accent-bg hover:outline-primary-bg
+                    bg-surface-bg outline outline-accent-bg/40 text-surface-fg`;
     return (
-        <div className="flex w-full items-center justify-between">
+        <div className="flex w-full border items-center justify-between">
             <button
                 onClick={() => change(-1)}
                 className={buttonStyles}>
