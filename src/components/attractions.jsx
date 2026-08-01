@@ -1,5 +1,5 @@
 import { shows } from '../data/showDetails';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 const parent = {
     hidden: {},
@@ -28,13 +28,14 @@ export function KeyAttractions() {
     return (
         <section className="sm:p-6 p-4 flex flex-col gap-10 text-white mt-6">
             <Heading />
-            <motion.div
+            <m.div
                 variants={parent}
                 initial='hidden'
                 whileInView='visible'
+                viewport={{ once: true }}
                 className="sm:grid sm:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] flex flex-wrap gap-6">
                 <Attractions />
-            </motion.div>
+            </m.div>
             <ShowMoreAnimals />
             <hr />
         </section >
@@ -46,7 +47,7 @@ function Heading() {
         <h1 className="text-4xl font-extrabold text-primary-bg w-fit py-1">
             Key{' '}
             <span className="relative inline-block">
-                <motion.span
+                <m.span
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     viewport={{ once: true }}
@@ -63,14 +64,14 @@ function Attractions() {
     return (
         shows.map((show, i) => {
             return (
-                <motion.div
+                <m.div
                     variants={children}
                     key={show.title + i}
                     className="w-full max-w-160 h-50 relative
                  flex flex-col justify-center overflow-hidden">
                     <Images show={show} />
                     <MetaData show={show} />
-                </motion.div>
+                </m.div>
             )
         })
     )
@@ -108,13 +109,13 @@ function MetaData({ show }) {
 }
 function ShowMoreAnimals() {
     return (
-        <motion.button
+        <m.button
             initial={{ x: -10, opacity: 0.8 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
             className="bg-primary-bg
             h-fit px-3 py-0.5 md:px-4 md:py-2 self-start rounded">View all &gt;&gt;
-        </motion.button>
+        </m.button>
     )
 }
