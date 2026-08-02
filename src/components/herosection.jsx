@@ -28,8 +28,8 @@ export function HeroSection() {
             initial='hidden'
             animate='visible'
 
-            className="relative flex flex-col justify-center gap-12 w-full min-h-140 text-white
-            [clip-path:polygon(0%_0%,100%_0%,100%_99%,80%_100%,16%_98%,0%_94%)]">
+            className="relative flex flex-col justify-center gap-12 w-full min-h-140 lg:min-h-160 text-white
+            .hero-section">
             <figure
                 className="w-full h-full absolute top-0">
                 <img
@@ -40,7 +40,7 @@ export function HeroSection() {
                     loading="eager"
                 />
             </figure>
-            <section className="z-10 p-6 flex flex-col gap-12 max-w-300">
+            <section className="z-10 p-6 lg:p-14 flex flex-col gap-12 max-w-300">
                 <div>
                     <m.h1
                         variants={children}

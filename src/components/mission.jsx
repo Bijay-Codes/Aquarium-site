@@ -1,10 +1,12 @@
+import { m } from 'framer-motion'
 import { proofProgrames } from "../data/proof"
-
+import { Heading } from '../util/slectedText'
 export function Mission() {
     return (
         <section className="p-6 flex flex-col gap-12">
             <div>
-                <h1 className="text-2xl font-extrabold">Our Mission</h1>
+                {/* <h1 className="">Our Mission</h1> */}
+                <Heading text={'Our'} selectedText={'Mission'} />
                 <h2 className="text-xl text-surface-muted-fg sm:max-w-300">
                     We're working toward a facility where every animal is cared for and thriving,
                     while helping people understand the damage our oceans face every day.
@@ -54,3 +56,4 @@ function Proof() {
         </div>
     )
 }
+

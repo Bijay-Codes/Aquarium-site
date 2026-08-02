@@ -1,6 +1,6 @@
 import { shows } from '../data/showDetails';
 import { m } from 'framer-motion';
-
+import { Heading } from '../util/slectedText';
 const parent = {
     hidden: {},
     visible: {
@@ -27,7 +27,7 @@ const children = {
 export function KeyAttractions() {
     return (
         <section className="sm:p-6 p-4 flex flex-col gap-10 text-white mt-6">
-            <Heading />
+            <Heading text={'Key'} selectedText={'Attractions'} />
             <m.div
                 variants={parent}
                 initial='hidden'
@@ -42,24 +42,6 @@ export function KeyAttractions() {
     )
 }
 
-function Heading() {
-    return (
-        <h1 className="text-4xl font-extrabold text-primary-bg w-fit py-1">
-            Key{' '}
-            <span className="relative inline-block">
-                <m.span
-                    initial={{ scaleX: 0 }}
-                    whileInView={{ scaleX: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, ease: 'easeInOut' }}
-                    style={{ originX: 0 }}
-                    className="absolute inset-0 bg-primary-bg -z-10"
-                />
-                <span className="relative text-white px-1">Attractions</span>
-            </span>
-        </h1>
-    );
-}
 function Attractions() {
     return (
         shows.map((show, i) => {

@@ -2,12 +2,12 @@ import { useTheme } from '../hooks/useTheme'
 export function Navbar() {
     const { theme, toggle } = useTheme();
     return (
-        <nav className="h-18 sm:h-20 flex items-center sm:px-6 px-3 dark:bg-surface-bg">
+        <nav className="h-16 sm:h-20 flex items-center sm:px-6 px-3 dark:bg-surface-bg">
             <section className="flex w-full gap-2 sm:gap-4 items-center">
                 <Logo />
                 <div className="flex flex-col text-page-fg">
-                    <h1 className='sm:text-2xl text-xl'>Coral Bay</h1>
-                    <h2 className='font-bold sm:text-lg text-base'>Open today 7am - 5pm</h2>
+                    <h1 className='sm:text-2xl text-lg'>Coral Bay</h1>
+                    <h2 className='font-bold sm:text-lg text-xs'>Open today 7am - 5pm</h2>
                 </div>
                 <div className='ml-auto flex gap-3'>
                     <MenuCTA />
@@ -29,7 +29,7 @@ function Logo() {
 
 function ThemeSwitcher({ toggle, theme }) {
     return (
-        <button onClick={toggle} className='w-9 h-9 p-1.5 sm:w-10 sm:h-10 sm:p-2.5 bg-surface-muted-bg outline outline-accent-fg/50 rounded-full sm:rounded-lg'>
+        <button onClick={toggle} className='w-7 h-7 p-1.5 sm:w-10 sm:h-10 sm:p-2.5 bg-surface-muted-bg outline outline-accent-fg/50 rounded-full sm:rounded-lg'>
             {theme === 'dark' ?
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
@@ -46,7 +46,7 @@ function ThemeSwitcher({ toggle, theme }) {
 function Menu() {
     return (
         <div className="bg-primary-bg text-primary-fg
-            w-9 h-9 sm:h-10 sm:w-10 aspect-square rounded p-1 sm:p-2
+            w-7 h-7 sm:h-10 sm:w-10 aspect-square rounded p-1 sm:p-2
             inline-flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />

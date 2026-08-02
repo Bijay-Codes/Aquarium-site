@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useCheckDesktop } from '../hooks/useCheckWidth'
+import { useCheckDesktop } from '../hooks/useCheckWidth';
+import { m } from 'framer-motion';
 const images = [
     {
         title: 'Releasing Lunaris back to the ocean',
@@ -15,17 +16,40 @@ const images = [
     }
 ]
 
+const memberBenifits = [
+    {
+        title: 'Stay connected',
+        subTitle: 'Get notified every time we bring a change',
+        description: 'We email and post updates every time we rescue an animal, help the environment, or release an animal back into the wild.'
+    },
+    {
+        title: 'Name a rescued animal',
+        subTitle: 'Take part in our naming events',
+        description: 'Members get the chance to name the animals we bring in — join an event and cast your vote.'
+    },
+    {
+        title: 'Save 20%',
+        subTitle: "A member's only discount on every ticket",
+        description: 'Enjoy 20% discount on tickets and store purchases at the aquarium.'
+    }
+]
+
 export function JoinMembership() {
     const showSlider = useCheckDesktop(600);
     return (
         <section className='p-6 flex flex-col gap-6'>
-            <div>
+            <div className="self-start">
                 <h1 className='text-3xl font-extrabold text-accent-bg'>Become a member</h1>
                 <h2 className='text-xl'>Every cent goes toward helping an animal</h2>
             </div>
             <div className='sm:grid sm:grid-cols-3 max-w-300
             flex flex-wrap gap-6'>
-                <div
+                <m.div
+                    initial={{ y: 15 }}
+                    whileInView={{ y: 0 }}
+                    whileHover={{ scale: 1.005, y: -2 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
                     className='sm:grid grid-cols-2 flex flex-wrap text-surface-fg col-span-3 gap-6
                         bg-surface-bg w-full p-6 rounded-lg relative border-b-2 border-accent-bg/20'>
                     <div className="flex flex-col gap-4">
@@ -38,33 +62,29 @@ export function JoinMembership() {
                     {!showSlider &&
                         <Slider list={images} />
                     }
-                </div>
-                <div
-                    className='flex flex-col gap-4 text-surface-fg
+                </m.div>
+                {memberBenifits.map((benifit => (
+                    <m.div
+                        whileHover={{
+                            outline: '1px solid var(--color-primary-bg)',
+                            y: -2
+                        }}
+                        initial={{ opacity: 0.8, y: 15 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false }}
+                        transition={{ duration: 0.4, type: 'tween' }}
+                        key={benifit.title}
+                        className='flex flex-col gap-4 text-surface-fg
                         bg-surface-bg w-full px-6 py-4 rounded-lg'>
-                    <h3 className='text-2xl font-extrabold'>Stay connected</h3>
-                    <h4 className='text-md'>Get notified every time we bring a change</h4>
-                    <p>We email and post updates every time we rescue an animal, help the environment, or release an animal back into the wild.</p>
-                    <button className='text-left text-surface-muted-fg mt-auto underline underline-offset-4'>learn more &gt;&gt;</button>
-                </div>
-                <div
-                    className='flex flex-col gap-4 text-surface-fg
-                        bg-surface-bg w-full p-4 rounded-lg'>
-                    <h3 className='text-2xl font-extrabold'>Name a rescued animal</h3>
-                    <h4 className='text-md'>Take part in our naming events</h4>
-                    <p>Members get the chance to name the animals we bring in — join an event and cast your vote.</p>
-                    <button className='text-left text-surface-muted-fg mt-auto underline underline-offset-4'>learn more &gt;&gt;</button>
-                </div>
-                <div
-                    className='flex flex-col gap-4 text-surface-fg
-                        bg-surface-bg w-full p-4 rounded-lg'>
-                    <div className="flex gap-4">
-                        <h3 className='text-2xl font-extrabold'>Save 10%</h3>
-                    </div>
-                    <h4 className='text-md'>A member's only discount on every ticket</h4>
-                    <p>Enjoy 10% off tickets and store purchases at the aquarium.</p>
-                    <button className='text-left text-surface-muted-fg underline mt-auto underline-offset-4'>learn more &gt;&gt;</button>
-                </div>
+                        <h3 className='text-2xl font-extrabold'>{benifit.title}</h3>
+                        <h4 className='text-md'>{benifit.subTitle}</h4>
+                        <p>{benifit.description}</p>
+                        <button className='text-left text-surface-muted-fg mt-auto underline underline-offset-4'>
+                            learn more &gt;&gt;
+                        </button>
+                    </m.div>
+                ))
+                )}
             </div>
         </section>
     )
@@ -74,9 +94,8 @@ function SocialIcons() {
     const socialIconClass = 'flex flex-col items-center justify-center gap-1 w-10';
     const iconWrapClass = 'w-6 h-6 sm:h-8 sm:w-8 flex items-center justify-center';
     const linkStyles = 'text-xs text-center font-bold text-surface-muted-fg';
-
     return (
-        <div className="flex gap-6 p-2">
+        <div className="flex gap-6 justify-start p-2">
             <div className={socialIconClass}>
                 <div className={iconWrapClass}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-full h-full">
@@ -139,7 +158,7 @@ function Slider({ list }) {
     return (
         <div className="relative w-full flex flex-col items-center justify-end gap-2">
             <figure title={list[index].title}
-                className="relative w-full h-80 overflow-hidden outline rounded-2xl outline-accent-bg/20">
+                className="relative w-full h-80 overflow-hidden outline rounded outline-accent-bg/20">
                 <img
                     src={list[index].src}
                     alt={list[index].title}
@@ -162,7 +181,7 @@ function SliderButtons({ list, index, setIndex }) {
     const buttonStyles = `px-2 py-1 rounded-xl hover:text-accent-fg hover:bg-accent-bg hover:outline-primary-bg
                     bg-surface-bg outline outline-accent-bg/40 text-surface-fg`;
     return (
-        <div className="flex w-full border items-center justify-between">
+        <div className="flex w-full items-center justify-between">
             <button
                 onClick={() => change(-1)}
                 className={buttonStyles}>
