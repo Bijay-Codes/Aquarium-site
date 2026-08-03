@@ -27,7 +27,7 @@ export function HeroSection() {
             variants={parent}
             initial='hidden'
             animate='visible'
-
+            id='hero'
             className="relative flex flex-col justify-center gap-12 w-full min-h-140 lg:min-h-160 text-white
             .hero-section">
             <figure
@@ -66,7 +66,7 @@ function CTA() {
             variants={children}
             whileHover={{
                 y: 2,
-                background: 'linear-gradient(120deg, var(--color-accent-bg), var(--color-primary-bg))'
+                background: 'linear-gradient(135deg, var(--color-primary-bg), var(--color-accent-bg))'
             }}
             transition={{ type: 'spring', stiffness: 100, damping: 10 }}
             className="bg-accent-bg text-accent-fg font-head

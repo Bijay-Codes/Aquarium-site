@@ -3,7 +3,7 @@ import { proofProgrames } from "../data/proof"
 import { Heading } from '../util/slectedText'
 export function Mission() {
     return (
-        <section className="p-6 flex flex-col gap-12">
+        <section className="p-6 flex flex-col gap-12" id='mission'>
             <m.div
                 initial={{ x: 24 }}
                 whileInView={{ x: 0 }}
@@ -22,7 +22,7 @@ export function Mission() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: 'easeIn' }}
-                className="bg-primary-bg/10 outline outline-primary-bg border-primary-bg mt-auto rounded 
+                className="bg-primary-bg/10 text-primary-bg outline outline-primary-bg/40 border-primary-bg mt-auto rounded 
             max-w-200 border-l-6 p-6">
                 <p>
                     1.2 million gallons run through our closed-loop filtration system — no ocean water is ever discharged untreated,
@@ -32,7 +32,6 @@ export function Mission() {
                     AZA-accredited since 2011 — one of only 4 aquariums in the region held to that standard.
                 </p>
             </m.div>
-            <hr className="opacity-30 w-full" />
         </section>
     )
 }
@@ -61,7 +60,7 @@ function Proof() {
                 return (
                     <m.div
                         variants={children}
-                        className="flex flex-col overflow-hidden rounded-xl border border-primary-bg"
+                        className="flex flex-col overflow-hidden rounded-xl"
                         key={programme.title + programme.img}>
                         <img
                             src={programme.img}

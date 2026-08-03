@@ -38,7 +38,8 @@ const memberBenifits = [
 export function JoinMembership() {
     const showSlider = useCheckDesktop(600);
     return (
-        <section className='p-6 flex flex-col gap-6'>
+        <section className='p-6 flex flex-col gap-6'
+            id="membership">
             <div className="self-start">
                 <Heading text={'Become a'} selectedText={'Member'} />
                 <h2 className='text-xl'>Every cent goes toward helping an animal</h2>
@@ -91,7 +92,7 @@ export function JoinMembership() {
     )
 }
 
-function SocialIcons() {
+export function SocialIcons() {
     const socialIconClass = 'flex flex-col items-center justify-center gap-1 w-10';
     const iconWrapClass = 'w-6 h-6 sm:h-8 sm:w-8 flex items-center justify-center';
     const linkStyles = 'text-xs text-center font-bold text-surface-muted-fg';
@@ -104,7 +105,7 @@ function SocialIcons() {
                         <path fill="#fff" d="m204.8 332.8l133-76.8l-133-76.8z"></path>
                     </svg>
                 </div>
-                <h1 className={linkStyles}>Youtube</h1>
+                <span className={linkStyles}>Youtube</span>
             </div>
 
             <div className={socialIconClass}>
@@ -126,7 +127,7 @@ function SocialIcons() {
                         <path fill="#fff" d="M256 67c-51.3 0-57.8.2-77.9 1.1s-33.9 4.1-45.9 8.8c-12.4 4.8-23 11.3-33.5 21.8s-17 21.1-21.8 33.5c-4.7 12-7.9 25.8-8.8 45.9c-.9 20.2-1.1 26.6-1.1 77.9s.2 57.8 1.1 77.9s4.1 33.9 8.8 45.9c4.8 12.4 11.3 23 21.8 33.5s21 17 33.5 21.8c12 4.7 25.8 7.9 45.9 8.8c20.2.9 26.6 1.1 77.9 1.1s57.8-.2 77.9-1.1s33.9-4.1 45.9-8.8c12.4-4.8 23-11.3 33.5-21.8s17-21.1 21.8-33.5c4.6-12 7.8-25.8 8.8-45.9c.9-20.2 1.1-26.6 1.1-77.9s-.2-57.8-1.1-77.9s-4.1-33.9-8.8-45.9c-4.8-12.4-11.3-23-21.8-33.5s-21-17-33.5-21.8c-12-4.7-25.8-7.9-45.9-8.8c-20.2-.9-26.6-1.1-77.9-1.1m-17 34.1h17c50.5 0 56.4.2 76.4 1.1c18.4.8 28.4 3.9 35.1 6.5c8.8 3.4 15.1 7.5 21.7 14.1s10.7 12.9 14.1 21.7c2.6 6.7 5.7 16.7 6.5 35.1c.9 19.9 1.1 25.9 1.1 76.4s-.2 56.4-1.1 76.4c-.8 18.4-3.9 28.4-6.5 35.1c-3.4 8.8-7.5 15.1-14.1 21.7s-12.9 10.7-21.7 14.1c-6.7 2.6-16.7 5.7-35.1 6.5c-19.9.9-25.9 1.1-76.4 1.1s-56.5-.2-76.4-1.1c-18.4-.9-28.4-3.9-35.1-6.5c-8.8-3.4-15.1-7.5-21.7-14.1s-10.7-12.9-14.1-21.7c-2.6-6.7-5.7-16.7-6.5-35.1c-.9-19.9-1.1-25.9-1.1-76.4s.2-56.4 1.1-76.4c.8-18.4 3.9-28.4 6.5-35.1c3.4-8.8 7.5-15.1 14.1-21.7s12.9-10.7 21.7-14.1c6.7-2.6 16.7-5.7 35.1-6.5c17.4-.9 24.2-1.1 59.4-1.1m117.9 31.4c-12.5 0-22.7 10.1-22.7 22.7c0 12.5 10.2 22.7 22.7 22.7s22.7-10.2 22.7-22.7s-10.2-22.8-22.7-22.7M256 159c-53.6 0-97.1 43.5-97.1 97.1s43.5 97 97.1 97s97-43.4 97-97s-43.4-97.1-97-97.1m0 34c34.8 0 63 28.2 63 63s-28.2 63-63 63s-63-28.2-63-63s28.2-63 63-63"></path>
                     </svg>
                 </div>
-                <h2 className={linkStyles}>Instagram</h2>
+                <span className={linkStyles}>Instagram</span>
             </div>
 
             <div className={socialIconClass}>
@@ -139,7 +140,7 @@ function SocialIcons() {
                         </g>
                     </svg>
                 </div>
-                <h3 className={linkStyles}>Twitter</h3>
+                <span className={linkStyles}>Twitter</span>
             </div>
 
             <div className={socialIconClass}>
@@ -148,7 +149,7 @@ function SocialIcons() {
                         <path fill="#1185fe" d="M55.491 15.172c29.35 22.035 60.917 66.712 72.509 90.686c11.592-23.974 43.159-68.651 72.509-90.686C221.686-.727 256-13.028 256 26.116c0 7.818-4.482 65.674-7.111 75.068c-9.138 32.654-42.436 40.983-72.057 35.942c51.775 8.812 64.946 38 36.501 67.187c-54.021 55.433-77.644-13.908-83.696-31.676c-1.11-3.257-1.63-4.78-1.637-3.485c-.008-1.296-.527.228-1.637 3.485c-6.052 17.768-29.675 87.11-83.696 31.676c-28.445-29.187-15.274-58.375 36.5-67.187c-29.62 5.041-62.918-3.288-72.056-35.942C4.482 91.79 0 33.934 0 26.116C0-13.028 34.314-.727 55.491 15.172"></path>
                     </svg>
                 </div>
-                <h4 className={linkStyles}>Bluesky</h4>
+                <span className={linkStyles}>Bluesky</span>
             </div>
         </div>
     )

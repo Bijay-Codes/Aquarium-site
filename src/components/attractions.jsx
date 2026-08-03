@@ -12,7 +12,7 @@ const parent = {
 
 const children = {
     hidden: {
-        opacity: 0.2, x: 16
+        opacity: 0, x: 16
     },
     visible: {
         opacity: 1,
@@ -26,7 +26,8 @@ const children = {
 
 export function KeyAttractions() {
     return (
-        <section className="sm:p-6 p-4 flex flex-col gap-10 text-white mt-6">
+        <section className="sm:p-6 p-4 flex flex-col gap-10 text-white mt-6"
+            id='attractions'>
             <Heading text={'Key'} selectedText={'Attractions'} />
             <m.div
                 variants={parent}
@@ -37,7 +38,7 @@ export function KeyAttractions() {
                 <Attractions />
             </m.div>
             <ShowMoreAnimals />
-            <hr />
+            <hr className="w-full text-page-fg bg-gradient h-1 opacity-70" />
         </section >
     )
 }
@@ -76,7 +77,7 @@ function MetaData({ show }) {
         <div
             className='w-full h-full rounded-2xl p-4
             flex flex-col gap-2
-            absolute bottom-0 bg-black/30 hover:bg-transparent'>
+            absolute bottom-0 bg-black/30 hover:bg-transparent transition-all duration-200 ease-in-out'>
             <div>
                 <span className="sm:text-xl text-xl font-extrabold">{show.title} | </span>
                 <span className="text-xl font-extrabold text-shadow-xs text-shadow-black">{show.time}</span>

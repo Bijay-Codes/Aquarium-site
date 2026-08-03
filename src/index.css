@@ -76,7 +76,7 @@ body {
 }
 
 .bg-gradient {
-    background: linear-gradient(90deg, var(--accent-bg), var(--color-primary-bg));
+    background: linear-gradient(135deg, var(--color-primary-bg), var(--color-accent-bg));
 }
 
 /* * {
