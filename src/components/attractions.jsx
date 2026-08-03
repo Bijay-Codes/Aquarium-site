@@ -12,7 +12,7 @@ const parent = {
 
 const children = {
     hidden: {
-        opacity: 0, x: 16
+        opacity: 0.2, x: 16
     },
     visible: {
         opacity: 1,
@@ -96,8 +96,8 @@ function ShowMoreAnimals() {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
-            className="bg-primary-bg
-            h-fit px-3 py-0.5 md:px-4 md:py-2 self-start rounded">View all &gt;&gt;
+            className="hover:bg-primary-bg hover:text-primary-fg text-page-fg
+            h-fit px-2 self-start rounded">View all &gt;&gt;
         </m.button>
     )
 }

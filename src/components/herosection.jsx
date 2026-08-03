@@ -44,7 +44,7 @@ export function HeroSection() {
                 <div>
                     <m.h1
                         variants={children}
-                        className="md:text-6xl text-4xl font-extrabold text-shadow-sm text-shadow-accent-fg mb-2">
+                        className="md:text-6xl text-4xl font-extrabold text-shadow-sm text-shadow-accent-fg mb-2 font-head">
                         The Ocean, up close
                     </m.h1>
                     <m.h2
@@ -69,7 +69,7 @@ function CTA() {
                 background: 'linear-gradient(120deg, var(--color-accent-bg), var(--color-primary-bg))'
             }}
             transition={{ type: 'spring', stiffness: 100, damping: 10 }}
-            className="bg-accent-bg text-accent-fg 
+            className="bg-accent-bg text-accent-fg font-head
         w-fit font-extrabold md:px-6 md:py-3 px-3 py-2 rounded text-xl">Book your Tickets
         </m.button>
     )
@@ -85,7 +85,7 @@ function SecondMessage() {
                 Every ticket helps us to fund an animal rescue
             </p>
             <button
-                className="sm:text-lg text-sm font-extrabold underline underline-offset-2 text-white/80 hover:text-white">
+                className="text-sm font-extrabold underline underline-offset-2 text-white/80 hover:text-white">
                 learn more &gt;&gt;
             </button>
         </m.div>

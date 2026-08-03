@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useCheckDesktop } from '../hooks/useCheckWidth';
+import { Heading } from '../util/slectedText';
 import { m } from 'framer-motion';
 const images = [
     {
@@ -39,7 +40,7 @@ export function JoinMembership() {
     return (
         <section className='p-6 flex flex-col gap-6'>
             <div className="self-start">
-                <h1 className='text-3xl font-extrabold text-accent-bg'>Become a member</h1>
+                <Heading text={'Become a'} selectedText={'Member'} />
                 <h2 className='text-xl'>Every cent goes toward helping an animal</h2>
             </div>
             <div className='sm:grid sm:grid-cols-3 max-w-300
@@ -76,9 +77,9 @@ export function JoinMembership() {
                         key={benifit.title}
                         className='flex flex-col gap-4 text-surface-fg
                         bg-surface-bg w-full px-6 py-4 rounded-lg'>
-                        <h3 className='text-2xl font-extrabold'>{benifit.title}</h3>
+                        <h3 className='text-2xl font-extrabold font-head'>{benifit.title}</h3>
                         <h4 className='text-md'>{benifit.subTitle}</h4>
-                        <p>{benifit.description}</p>
+                        <p className="leading-6">{benifit.description}</p>
                         <button className='text-left text-surface-muted-fg mt-auto underline underline-offset-4'>
                             learn more &gt;&gt;
                         </button>

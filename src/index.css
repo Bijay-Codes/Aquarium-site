@@ -19,6 +19,8 @@
     --color-warning-fg: var(--warning-fg);
     --color-danger: var(--danger-color);
     --color-danger-fg: var(--danger-fg);
+    --font-head: "Fraunces", serif;
+    --font-body: "Inter", sans-serif;
 }
 
 :root {
@@ -66,6 +68,7 @@
 body {
     background: var(--color-page-bg);
     color: var(--page-fg);
+    font-family: var(--font-body);
 }
 
 .hero-section {
