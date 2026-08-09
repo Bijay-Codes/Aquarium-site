@@ -69,15 +69,17 @@ export function JoinMembership() {
                     <m.div
                         whileHover={{
                             outline: '1px solid var(--color-primary-bg)',
-                            y: -2
+                            y: -1
                         }}
-                        initial={{ opacity: 0.8, y: 15 }}
+                        initial={{ opacity: 0.2, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false }}
                         transition={{ duration: 0.4, type: 'tween' }}
                         key={benifit.title}
-                        className='flex flex-col gap-4 text-surface-fg
-                        bg-surface-bg w-full px-6 py-4 rounded-lg'>
+                        className='flex flex-col items-start justify-start gap-4 text-surface-fg
+                        bg-surface-bg w-full px-6 sm:py-4 rounded-lg'>
+                        <span />
+                        <span />
                         <h3 className='text-2xl font-extrabold font-head'>{benifit.title}</h3>
                         <h4 className='text-md'>{benifit.subTitle}</h4>
                         <p className="leading-6">{benifit.description}</p>
@@ -92,13 +94,26 @@ export function JoinMembership() {
     )
 }
 
+const iconContainer = {
+    hidden: {},
+    visible: { transitions: { staggerChildren: 0.2, delayChildren: 0.4 } }
+}
+const icons = {
+    hidden: { x: -10 },
+    visible: { opacity: 1, x: 0 }
+}
 export function SocialIcons() {
     const socialIconClass = 'flex flex-col items-center justify-center gap-1 w-10';
     const iconWrapClass = 'w-6 h-6 sm:h-8 sm:w-8 flex items-center justify-center';
-    const linkStyles = 'text-xs text-center font-bold text-surface-muted-fg';
+    const linkStyles = 'text-xs text-center font-medium text-surface-muted-fg';
+    const childrenMotions = { duration: 0.3, ease: 'easeInOut' }
     return (
-        <div className="flex gap-6 justify-start p-2">
-            <div className={socialIconClass}>
+        <m.div className="flex gap-6 justify-start sm:p-2"
+            variants={iconContainer}
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ once: false, amount: 0.5 }}>
+            <m.div variants={icons} transition={childrenMotions} className={socialIconClass}>
                 <div className={iconWrapClass}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-full h-full">
                         <path fill="red" d="M501.3 132.8c-5.9-22-23.2-39.4-45.3-45.3c-39.9-10.7-200-10.7-200-10.7s-160.1 0-200 10.7c-22 5.9-39.4 23.2-45.3 45.3C0 172.7 0 256 0 256s0 83.3 10.7 123.2c5.9 22 23.2 39.4 45.3 45.3c39.9 10.7 200 10.7 200 10.7s160.1 0 200-10.7c22-5.9 39.4-23.2 45.3-45.3C512 339.3 512 256 512 256s0-83.3-10.7-123.2"></path>
@@ -106,9 +121,9 @@ export function SocialIcons() {
                     </svg>
                 </div>
                 <span className={linkStyles}>Youtube</span>
-            </div>
+            </m.div>
 
-            <div className={socialIconClass}>
+            <m.div variants={icons} transition={childrenMotions} className={socialIconClass}>
                 <div className={iconWrapClass}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-full h-full">
                         <radialGradient id="SVGZnQWPd8Y" cx={-286.878} cy={685.721} r={255.952} gradientTransform="matrix(0 -1.982 1.8439 0 -1128.4 -17.235)" gradientUnits="userSpaceOnUse">
@@ -128,9 +143,9 @@ export function SocialIcons() {
                     </svg>
                 </div>
                 <span className={linkStyles}>Instagram</span>
-            </div>
+            </m.div>
 
-            <div className={socialIconClass}>
+            <m.div variants={icons} transition={childrenMotions} className={socialIconClass}>
                 <div className={iconWrapClass}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="w-full h-full">
                         <g fill="none">
@@ -141,17 +156,17 @@ export function SocialIcons() {
                     </svg>
                 </div>
                 <span className={linkStyles}>Twitter</span>
-            </div>
+            </m.div>
 
-            <div className={socialIconClass}>
+            <m.div variants={icons} transition={childrenMotions} className={socialIconClass}>
                 <div className={iconWrapClass}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 226" className="w-full h-full">
                         <path fill="#1185fe" d="M55.491 15.172c29.35 22.035 60.917 66.712 72.509 90.686c11.592-23.974 43.159-68.651 72.509-90.686C221.686-.727 256-13.028 256 26.116c0 7.818-4.482 65.674-7.111 75.068c-9.138 32.654-42.436 40.983-72.057 35.942c51.775 8.812 64.946 38 36.501 67.187c-54.021 55.433-77.644-13.908-83.696-31.676c-1.11-3.257-1.63-4.78-1.637-3.485c-.008-1.296-.527.228-1.637 3.485c-6.052 17.768-29.675 87.11-83.696 31.676c-28.445-29.187-15.274-58.375 36.5-67.187c-29.62 5.041-62.918-3.288-72.056-35.942C4.482 91.79 0 33.934 0 26.116C0-13.028 34.314-.727 55.491 15.172"></path>
                     </svg>
                 </div>
                 <span className={linkStyles}>Bluesky</span>
-            </div>
-        </div>
+            </m.div>
+        </m.div>
     )
 }
 

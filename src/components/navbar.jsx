@@ -34,7 +34,7 @@ function Logo() {
 
 function ThemeSwitcher({ toggle, theme }) {
     return (
-        <button onClick={toggle} className='w-7 h-7 p-1.5 sm:w-10 sm:h-10 sm:p-2.5 bg-surface-muted-bg outline outline-accent-fg/50 rounded-full sm:rounded-lg hover:bg-page-fg hover:text-page-bg' aria-label='Switch theme'>
+        <button onClick={toggle} className='w-7 h-7 p-1.5 sm:w-10 sm:h-10 sm:p-2.5 bg-surface-muted-bg outline outline-accent-fg/80 rounded-full sm:rounded-lg hover:bg-page-fg hover:text-page-bg' aria-label='Switch theme'>
             {theme === 'dark' ?
                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
@@ -51,7 +51,7 @@ function ThemeSwitcher({ toggle, theme }) {
 function Menu() {
     return (
         <div className="bg-primary-bg text-primary-fg
-            hover:bg-primary-bg/70 hover:text-primary-fg active:bg-accent-bg active:text-accent-fg
+            hover:bg-accent-bg hover:text-primary-fg active:bg-accent-bg/80 active:text-accent-fg/60
             w-7 h-7 sm:h-10 sm:w-10 aspect-square rounded p-1 sm:p-2
             inline-flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
@@ -64,11 +64,13 @@ function Menu() {
 
 function MenuCTA() {
     return (
-        <div className="ml-auto gap-6 sm:text-xl text-sm sm:flex hidden sm:items-center">
-            <button className="font-extrabold hover:scale-102 hover:bg-page-fg hover:text-page-bg px-2 py-0.5 h-fit rounded">
+        <div className="ml-auto gap-4 sm:text-xl text-sm sm:flex hidden sm:items-center">
+            <button className="font-extrabold px-2 py-0.5 h-fit rounded
+            hover:font-extrabold hover:bg-primary-fg hover:text-primary-bg hover:outline-2 outline outline-primary-bg/40">
                 Tickets
             </button>
-            <button className="rounded hover:scale-102 hover:bg-page-fg hover:text-page-bg px-2 py-0.5 h-fit">Shows</button>
+            <button className="rounded font-extrabold px-2 py-0.5 h-fit 
+            hover:bg-primary-fg hover:text-primary-bg hover:outline-2 outline outline-primary-bg/40">Shows</button>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { proofProgrames } from "../data/proof"
 import { Heading } from '../util/slectedText'
 export function Mission() {
     return (
-        <section className="p-6 flex flex-col gap-12" id='mission'>
+        <section className="p-6 flex flex-col gap-12" id='members'>
             <m.div
                 initial={{ x: 24 }}
                 whileInView={{ x: 0 }}

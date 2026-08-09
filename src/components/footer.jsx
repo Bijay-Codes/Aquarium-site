@@ -5,7 +5,7 @@ export function Footer() {
         <m.footer
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="bg-surface-bg text-surface-fg mt-16 border-t-2 border-accent-bg/30">
             <div className="gap-6 p-6 grid grid-cols-2 max-w-180">

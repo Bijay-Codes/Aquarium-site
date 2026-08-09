@@ -66,7 +66,8 @@ function CTA() {
             variants={children}
             whileHover={{
                 y: 2,
-                background: 'linear-gradient(135deg, var(--color-primary-bg), var(--color-accent-bg))'
+                background: 'linear-gradient(135deg, var(--color-primary-bg), var(--color-accent-bg))',
+                color: 'var(--color-primary-fg)'
             }}
             transition={{ type: 'spring', stiffness: 100, damping: 10 }}
             className="bg-accent-bg text-accent-fg font-head
@@ -82,12 +83,12 @@ function SecondMessage() {
             className="flex md:p-6 flex-col justify-start items-start
          text-white/80 text-shadow-sm text-shadow-black text-lg">
             <p>
-                Every ticket helps us to fund an animal rescue
+                Every ticket helps us to fund an animal rescue, know more about us below
             </p>
-            <button
+            <a href='#members'
                 className="text-sm font-extrabold underline underline-offset-2 text-white/80 hover:text-white">
                 learn more &gt;&gt;
-            </button>
+            </a>
         </m.div>
     )
 }
