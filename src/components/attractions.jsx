@@ -65,7 +65,7 @@ function Images({ show }) {
         <figure className="w-full h-full">
             <img
                 src={show.img}
-                srcSet={show.optimized, show.img}
+                srcSet={`${show.optimized} 700w, ${show.img} 1920w`}
                 sizes='(max-width: 600px)100vw, 600px'
                 alt={show.title}
                 loading="lazy"

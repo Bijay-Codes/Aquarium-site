@@ -25,6 +25,6 @@ export const shows = [
         time: '5pm - 7pm',
         description: 'Enjoy the interactive end of the day programme with turtles roaming around the aquarium',
         img: 'screenshots/turtle.webp',
-        optimized: 'screenshots/optimized/otter-turtle.webp'
+        optimized: 'screenshots/optimized/turtle-mobile.webp'
     }
 ]

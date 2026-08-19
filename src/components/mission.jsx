@@ -64,9 +64,7 @@ function Proof() {
                         key={programme.title + programme.img}>
                         <img
                             src={programme.img}
-                            srcSet={
-                                programme.optimized, programme.img
-                            }
+                            srcSet={`${programme.optimized} 700w, ${programme.img} 1920w`}
                             sizes='(max-width:600px) 100vw, 600px'
                             alt={programme.title}
                             loading="lazy"
