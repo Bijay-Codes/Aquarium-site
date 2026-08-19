@@ -33,7 +33,7 @@ export function HeroSection({ openDialog }) {
             <figure
                 className="w-full h-full absolute top-0">
                 <img
-                    src="/screenshots/main.webp"
+                    height='100%' width='100%' src="/screenshots/main.webp"
                     className="w-full h-full object-cover"
                     alt="aquarium-background.webp"
                     fetchPriority="high"

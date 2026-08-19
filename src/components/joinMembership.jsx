@@ -175,10 +175,12 @@ function Slider({ list }) {
             <figure title={list[index].title}
                 className="relative w-full h-80 overflow-hidden outline rounded outline-accent-bg/20">
                 <img
+                    height='100%'
+                    width='100%'
                     src={list[index].src}
                     alt={list[index].title}
                     loading="lazy"
-                    className="w-full h-full rounded-lg object-cover" />
+                    className="rounded-lg object-cover" />
                 <div className="flex flex-col gap-2 items-center justify-center
                 inset-x-0 left-0 rounded-b-lg border-t-0 absolute bottom-0 bg-page-bg p-2">
                     <span className="text-xs text-surface-muted-fg">{list[index].title}</span>

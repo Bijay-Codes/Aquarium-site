@@ -67,7 +67,8 @@ function Images({ show }) {
                 src={show.img}
                 alt={show.title}
                 loading="lazy"
-                className='object-cover w-full h-full rounded-2xl' />
+                height='100%' width='100%'
+                className='object-cover rounded-2xl' />
         </figure>
     )
 }

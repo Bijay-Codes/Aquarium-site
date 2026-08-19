@@ -13,7 +13,7 @@ export function Footer() {
                 <div className="flex flex-col justify-start gap-5 col-span-2 w-full">
                     <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-full overflow-hidden">
-                            <img src="/assets/coralbay.svg" alt="Coral Bay logo" loading="lazy" />
+                            <img src="/assets/coralbay.svg" alt="Coral Bay logo" loading="lazy" width='100%' height='100%' />
                         </div>
                         <h2 className="text-2xl font-head font-extrabold">Coral Bay</h2>
                     </div>

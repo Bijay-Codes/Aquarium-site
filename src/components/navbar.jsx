@@ -27,7 +27,7 @@ export function Navbar({ openDialog, closeDialog }) {
 function Logo() {
     return (
         <div className="sm:w-12 sm:h-12 h-9 aspect-square rounded-full">
-            <img src="assets/coralbay.svg" alt="logo.svg" loading='lazy' />
+            <img height='100%' width='100%' src="assets/coralbay.svg" alt="logo.svg" loading='lazy' />
         </div>
     )
 }
