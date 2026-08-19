@@ -2,11 +2,13 @@ export const proofProgrames = [
     {
         title: 'Reuniting otters',
         description: 'We help lost and sick baby otters find their way back to their families. 30+ otters reunited this month',
-        img: 'screenshots/otter2.webp'
+        img: 'screenshots/otter2.webp',
+        optimized: 'screenshots/optimized/otter2-mobile.webp'
     },
     {
         title: 'Cleaning Oceans & Lakes',
         description: 'We clear plastic waste from the northwest coast and raise awareness in local communities. → 400kg+ of plastic removed from northern waters',
-        img: 'screenshots/cleaning.webp'
+        img: 'screenshots/cleaning.webp',
+        optimized: 'screenshots/optimized/cleaning-mobile.webp'
     }
 ]

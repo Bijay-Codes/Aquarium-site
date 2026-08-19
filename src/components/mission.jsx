@@ -64,6 +64,10 @@ function Proof() {
                         key={programme.title + programme.img}>
                         <img
                             src={programme.img}
+                            srcSet={
+                                programme.optimized, programme.img
+                            }
+                            sizes='(max-width:600px) 100vw, 600px'
                             alt={programme.title}
                             loading="lazy"
                             className="w-full h-60 object-cover"

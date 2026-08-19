@@ -34,6 +34,8 @@ export function HeroSection({ openDialog }) {
                 className="w-full h-full absolute top-0">
                 <img
                     height='100%' width='100%' src="/screenshots/main.webp"
+                    srcSet='/screenshots/optimized/main-mobile.webp, /screenshots/main.webp'
+                    sizes='(max-width: 600px) 100vw, 600px'
                     className="w-full h-full object-cover"
                     alt="aquarium-background.webp"
                     fetchPriority="high"
