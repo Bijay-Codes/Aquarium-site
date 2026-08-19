@@ -4,11 +4,11 @@ import { Mission } from '../components/mission.jsx';
 import { JoinMembership } from '../components/joinMembership.jsx'
 import { Footer } from "../components/footer.jsx";
 
-export function Homepage() {
+export function Homepage({ openDialog }) {
     return (
         <section>
-            <HeroSection />
-            <KeyAttractions />
+            <HeroSection openDialog={openDialog} />
+            <KeyAttractions openDialog={openDialog} />
             <Mission />
             <JoinMembership />
             <Footer />

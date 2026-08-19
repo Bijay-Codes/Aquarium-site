@@ -24,7 +24,7 @@ const children = {
 }
 
 
-export function KeyAttractions() {
+export function KeyAttractions({ openDialog }) {
     return (
         <section className="sm:p-6 p-4 flex flex-col gap-10 text-white mt-6"
             id='attractions'>
@@ -37,7 +37,7 @@ export function KeyAttractions() {
                 className="sm:grid sm:grid-cols-[repeat(auto-fill,minmax(400px,1fr))] flex flex-wrap gap-6">
                 <Attractions />
             </m.div>
-            <ShowMoreAnimals />
+            <ShowMoreAnimals openDialog={openDialog} />
             <hr className="w-full text-page-fg bg-gradient h-1 opacity-70" />
         </section >
     )
@@ -90,13 +90,14 @@ function MetaData({ show }) {
         </div>
     )
 }
-function ShowMoreAnimals() {
+function ShowMoreAnimals({ openDialog }) {
     return (
         <m.button
             initial={{ x: -10, opacity: 0.8 }}
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.2, ease: 'easeInOut' }}
+            onClick={openDialog}
             className="hover:bg-primary-bg hover:text-primary-fg text-page-fg
             h-fit px-2 self-start rounded">View all &gt;&gt;
         </m.button>

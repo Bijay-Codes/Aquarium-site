@@ -1,6 +1,6 @@
 import { useTheme } from '../hooks/useTheme';
 import { m } from 'framer-motion';
-export function Navbar() {
+export function Navbar({ openDialog, closeDialog }) {
     const { theme, toggle } = useTheme();
     return (
         <m.nav
@@ -15,9 +15,9 @@ export function Navbar() {
                     <h2 className='font-bold sm:text-lg text-xs'>Open today 7am - 5pm</h2>
                 </div>
                 <div className='ml-auto flex gap-3'>
-                    <MenuCTA />
+                    <MenuCTA openDialog={openDialog} />
                     <ThemeSwitcher toggle={toggle} theme={theme} />
-                    <Menu />
+                    <Menu openDialog={openDialog} />
                 </div>
             </section>
         </m.nav>
@@ -48,12 +48,13 @@ function ThemeSwitcher({ toggle, theme }) {
     )
 }
 
-function Menu() {
+function Menu({ openDialog }) {
     return (
         <div className="bg-primary-bg text-primary-fg
             hover:bg-accent-bg hover:text-primary-fg active:bg-accent-bg/80 active:text-accent-fg/60
             w-7 h-7 sm:h-10 sm:w-10 aspect-square rounded p-1 sm:p-2
-            inline-flex items-center justify-center">
+            inline-flex items-center justify-center"
+            onClick={openDialog}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                 <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
             </svg>
@@ -62,15 +63,20 @@ function Menu() {
     )
 }
 
-function MenuCTA() {
+function MenuCTA({ openDialog }) {
     return (
         <div className="ml-auto gap-4 sm:text-xl text-sm sm:flex hidden sm:items-center">
-            <button className="font-extrabold px-2 py-0.5 h-fit rounded
-            hover:font-extrabold hover:bg-primary-fg hover:text-primary-bg hover:outline-2 outline outline-primary-bg/40">
+            <button className="px-2 py-0.5 h-fit rounded
+            hover:bg-primary-fg hover:text-primary-bg hover:outline-2 outline outline-primary-bg/20"
+                onClick={openDialog}>
                 Tickets
             </button>
-            <button className="rounded font-extrabold px-2 py-0.5 h-fit 
-            hover:bg-primary-fg hover:text-primary-bg hover:outline-2 outline outline-primary-bg/40">Shows</button>
+            <button className="rounded px-2 py-0.5 h-fit 
+            hover:bg-primary-fg hover:text-primary-bg hover:outline-2 outline outline-primary-bg/20"
+                onClick={openDialog}
+            >
+                Shows
+            </button>
         </div>
     )
 }

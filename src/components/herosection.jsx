@@ -21,7 +21,7 @@ const children = {
     }
 }
 
-export function HeroSection() {
+export function HeroSection({ openDialog }) {
     return (
         <m.main
             variants={parent}
@@ -53,14 +53,14 @@ export function HeroSection() {
                         Sharks, Otters and other 100+ species - All within arms reach at Coral Bay
                     </m.h2>
                 </div>
-                <CTA />
+                <CTA openDialog={openDialog} />
                 <SecondMessage />
             </section>
         </m.main>
     )
 }
 
-function CTA() {
+function CTA({ openDialog }) {
     return (
         <m.button
             variants={children}
@@ -69,6 +69,7 @@ function CTA() {
                 background: 'linear-gradient(135deg, var(--color-primary-bg), var(--color-accent-bg))',
                 color: 'var(--color-primary-fg)'
             }}
+            onClick={openDialog}
             transition={{ type: 'spring', stiffness: 100, damping: 10 }}
             className="bg-accent-bg text-accent-fg font-head
         w-fit font-extrabold md:px-6 md:py-3 px-3 py-2 rounded text-xl">Book your Tickets

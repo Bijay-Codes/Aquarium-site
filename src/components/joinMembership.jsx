@@ -78,8 +78,6 @@ export function JoinMembership() {
                         key={benifit.title}
                         className='flex flex-col items-start justify-start gap-4 text-surface-fg
                         bg-surface-bg w-full px-6 sm:py-4 rounded-lg'>
-                        <span />
-                        <span />
                         <h3 className='text-2xl font-extrabold font-head'>{benifit.title}</h3>
                         <h4 className='text-md'>{benifit.subTitle}</h4>
                         <p className="leading-6">{benifit.description}</p>
