@@ -77,11 +77,11 @@ export function JoinMembership() {
                         transition={{ duration: 0.4, type: 'tween' }}
                         key={benifit.title}
                         className='flex flex-col items-start justify-start gap-4 text-surface-fg
-                        bg-surface-bg w-full px-6 sm:py-4 rounded-lg'>
+                        bg-surface-bg w-full px-6 py-4 rounded-lg'>
                         <h3 className='text-2xl font-extrabold font-head'>{benifit.title}</h3>
                         <h4 className='text-md'>{benifit.subTitle}</h4>
                         <p className="leading-6">{benifit.description}</p>
-                        <button className='text-left text-surface-muted-fg mt-auto underline underline-offset-4'>
+                        <button className='text-left text-surface-muted-fg mt-auto hover:underline underline-offset-4 underline-0 hover:text-primary-bg'>
                             learn more &gt;&gt;
                         </button>
                     </m.div>
