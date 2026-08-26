@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+html {
+    scroll-behavior: smooth;
+}
+
 @theme {
     --color-page-bg: var(--page-bg);
     --color-page-fg: var(--page-fg);

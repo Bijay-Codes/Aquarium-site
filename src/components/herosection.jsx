@@ -51,7 +51,7 @@ export function HeroSection({ openDialog }) {
                     </m.h1>
                     <m.h2
                         variants={children}
-                        className="md:text-4xl text-3xl text-shadow-sm text-shadow-accent-fg">
+                        className="md:text-4xl text-2xl text-shadow-sm text-shadow-accent-fg">
                         Sharks, Otters and other 100+ species - All within arms reach at Coral Bay
                     </m.h2>
                 </div>
@@ -90,7 +90,7 @@ function SecondMessage() {
             </p>
             <a href='#members'
                 className="text-sm font-extrabold underline underline-offset-2 text-white/80 hover:text-white">
-                learn more &gt;&gt;
+                Buy Membership
             </a>
         </m.div>
     )

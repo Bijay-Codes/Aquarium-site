@@ -35,7 +35,7 @@ const memberBenifits = [
     }
 ]
 
-export function JoinMembership() {
+export function JoinMembership({ openDialog }) {
     const showSlider = useCheckDesktop(600);
     return (
         <section className='p-6 flex flex-col gap-6'
@@ -81,7 +81,7 @@ export function JoinMembership() {
                         <h3 className='text-2xl font-extrabold font-head'>{benifit.title}</h3>
                         <h4 className='text-md'>{benifit.subTitle}</h4>
                         <p className="leading-6">{benifit.description}</p>
-                        <button className='text-left text-surface-muted-fg mt-auto hover:underline underline-offset-4 underline-0 hover:text-primary-bg'>
+                        <button onClick={openDialog} className='text-left text-surface-muted-fg mt-auto hover:underline underline-offset-4 underline-0 hover:text-primary-bg underline'>
                             learn more &gt;&gt;
                         </button>
                     </m.div>

@@ -1,7 +1,7 @@
 import { m } from 'framer-motion'
 import { proofProgrames } from "../data/proof"
 import { Heading } from '../util/slectedText'
-export function Mission() {
+export function Mission({ openDialog }) {
     return (
         <section className="p-6 flex flex-col gap-12" id='members'>
             <m.div
@@ -16,7 +16,7 @@ export function Mission() {
                     while helping people understand the damage our oceans face every day.
                 </h2>
             </m.div>
-            <Proof />
+            <Proof openDialog={openDialog} />
             <m.div
                 initial={{ opacity: 0.4, x: -6 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -47,7 +47,7 @@ const children = {
     hidden: { opacity: 0, x: -6 },
     visible: { opacity: 1, x: 0 }
 }
-function Proof() {
+function Proof({ openDialog }) {
     return (
         <m.div
             variants={parent}
@@ -73,7 +73,7 @@ function Proof() {
                         <div className="bg-surface-muted-bg px-4 py-2 flex flex-col flex-1 gap-2">
                             <h2 className="text-xl z-10">{programme.title}</h2>
                             <p className="flex-1 z-10">{programme.description}</p>
-                            <button className="text-sm underline underline-offset-4 w-fit py-2 z-10">
+                            <button onClick={openDialog} className="text-sm underline underline-offset-4 w-fit py-2 z-10">
                                 learn more &gt;&gt;
                             </button>
                         </div>

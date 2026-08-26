@@ -9,8 +9,8 @@ export function Homepage({ openDialog }) {
         <section>
             <HeroSection openDialog={openDialog} />
             <KeyAttractions openDialog={openDialog} />
-            <Mission />
-            <JoinMembership />
+            <Mission openDialog={openDialog} />
+            <JoinMembership openDialog={openDialog} />
             <Footer />
         </section>
     )

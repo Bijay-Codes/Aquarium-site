@@ -1,7 +1,7 @@
 export function Links() {
     return (
         <ul className="flex flex-wrap gap-4 px-2 py-4">
-            <li className="hover:text-primary-bg"><a
+            <li><a
                 href="https://linkedin.com/in/bijay-verma-876b353a4"
                 target="_blank"
                 rel="noopener noreferrer">
@@ -10,7 +10,7 @@ export function Links() {
                 />
                 <span className="text-xs hover:text-inherit">Linkedin</span>
             </a></li>
-            <li className="hover:text-primary-bg">
+            <li>
                 <a href="https://github.com/Bijay-Codes"
                     target="_blank"
                     rel="noopener noreferrer">

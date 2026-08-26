@@ -59,7 +59,7 @@ export function Footer() {
                         placeholder="you@email.com"
                         className="min-w-0 flex-1 bg-page-bg text-page-fg placeholder:text-surface-muted-fg
                             rounded px-3 py-2 text-sm outline outline-surface-muted-fg/40 focus:outline-accent-bg
-                            active:bg-accent-bg active:text-accent-fg focus:bg-accent-bg/10 focus:text-primary-bg"
+                            active:bg-accent-bg active:text-accent-fg focus:bg-accent-bg/10"
                     />
                     <button
                         type="submit"
