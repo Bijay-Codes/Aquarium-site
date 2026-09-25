@@ -70,7 +70,7 @@ function Images({ show }) {
                 alt={show.title}
                 loading="lazy"
                 width='100%'
-                className='rounded-xl h-full' />
+                className='rounded-xl object-cover h-full' />
         </figure>
     )
 }
